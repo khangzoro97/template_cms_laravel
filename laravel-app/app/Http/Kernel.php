@@ -44,6 +44,7 @@ class Kernel extends HttpKernel
             'throttle:api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
+        'jwt' => [\Jerry\JWT\Middleware\JWTMiddleware::class,],
     ];
 
     /**

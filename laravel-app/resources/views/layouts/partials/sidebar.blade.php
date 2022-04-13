@@ -2,7 +2,7 @@
     <!-- Brand Logo -->
     <a href="/home" class="brand-link">
         <img src="assets/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">KhangZoro</span>
+        <span class="brand-text font-weight-light">DOYOSE</span>
     </a>
 
     <!-- Sidebar -->
@@ -42,7 +42,15 @@
                     <a href="/home" class="nav-link {{ $elementActive == 'home' ? 'active' : '' }}">
                         <i class="nav-icon fas fa-home"></i>
                         <p>
-                            Home
+                            Tra cứu lịch sử đăng nhập
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/user" class="nav-link  {{ $elementActive == 'user' ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-user"></i>
+                        <p>
+                            Quản lý User
                         </p>
                     </a>
                 </li>

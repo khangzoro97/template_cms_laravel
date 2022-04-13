@@ -4,8 +4,65 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "138eba85b8dce1780a670b74fb573b06",
+    "content-hash": "2c164a955a6e16ba7848759d28e6d05a",
     "packages": [
+        {
+            "name": "adhocore/jwt",
+            "version": "1.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/adhocore/php-jwt.git",
+                "reference": "6c434af7170090bb7a8880d2bc220a2254ba7899"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/adhocore/php-jwt/zipball/6c434af7170090bb7a8880d2bc220a2254ba7899",
+                "reference": "6c434af7170090bb7a8880d2bc220a2254ba7899",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0 || ^8.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^6.5 || ^7.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Ahc\\Jwt\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jitendra Adhikari",
+                    "email": "jiten.adhikary@gmail.com"
+                }
+            ],
+            "description": "Ultra lightweight JSON web token (JWT) library for PHP5.5+.",
+            "keywords": [
+                "auth",
+                "json-web-token",
+                "jwt",
+                "jwt-auth",
+                "jwt-php",
+                "token"
+            ],
+            "support": {
+                "issues": "https://github.com/adhocore/php-jwt/issues",
+                "source": "https://github.com/adhocore/php-jwt/tree/1.1.2"
+            },
+            "funding": [
+                {
+                    "url": "https://paypal.me/ji10",
+                    "type": "custom"
+                }
+            ],
+            "time": "2021-02-20T09:56:44+00:00"
+        },
         {
             "name": "asm89/stack-cors",
             "version": "v2.0.3",
@@ -885,6 +942,43 @@
             "time": "2021-10-06T17:43:30+00:00"
         },
         {
+            "name": "jerrygaoyang/laravel-jwt",
+            "version": "v1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jerrygaoyang/laravel-jwt.git",
+                "reference": "ebaa32027f38a030f9ee09c3f0df21666de8dfc9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jerrygaoyang/laravel-jwt/zipball/ebaa32027f38a030f9ee09c3f0df21666de8dfc9",
+                "reference": "ebaa32027f38a030f9ee09c3f0df21666de8dfc9",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Jerry\\JWT\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "gaoyang",
+                    "email": "917616767@qq.com"
+                }
+            ],
+            "description": "jwt auth for encode decode and token expire_in authenticate",
+            "support": {
+                "issues": "https://github.com/jerrygaoyang/laravel-jwt/issues",
+                "source": "https://github.com/jerrygaoyang/laravel-jwt/tree/v1.0.5"
+            },
+            "time": "2017-11-21T02:15:14+00:00"
+        },
+        {
             "name": "laravel/framework",
             "version": "v8.73.2",
             "source": {
@@ -1497,6 +1591,63 @@
                 }
             ],
             "time": "2021-11-21T11:48:40+00:00"
+        },
+        {
+            "name": "miladrahimi/php-jwt",
+            "version": "v2.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/miladrahimi/php-jwt.git",
+                "reference": "8462a5763dca178b8d5b68807c3b4d169aae5e8c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/miladrahimi/php-jwt/zipball/8462a5763dca178b8d5b68807c3b4d169aae5e8c",
+                "reference": "8462a5763dca178b8d5b68807c3b4d169aae5e8c",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "ext-openssl": "*",
+                "php": ">=7.1|^8.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7|^8|^9"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MiladRahimi\\Jwt\\": "src/",
+                    "MiladRahimi\\Jwt\\Tests\\": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Milad Rahimi",
+                    "email": "info@miladrahimi.com"
+                }
+            ],
+            "description": "A PHP implementation of JWT (JSON Web Token) generator, parser, verifier, and validator",
+            "homepage": "https://github.com/miladrahimi/php-jwt",
+            "keywords": [
+                "JSON Web Token",
+                "decoder",
+                "encoder",
+                "jwt",
+                "parser",
+                "token",
+                "validator",
+                "verifier"
+            ],
+            "support": {
+                "issues": "https://github.com/miladrahimi/php-jwt/issues",
+                "source": "https://github.com/miladrahimi/php-jwt/tree/v2.1.4"
+            },
+            "time": "2021-07-10T12:45:31+00:00"
         },
         {
             "name": "monolog/monolog",
