@@ -39,7 +39,7 @@
                                 <th style="width:15%">Điện thoại</th>
                                 <th style="width:20%">Địa chỉ</th>
                                 <th style="width:6%">Trạng thái</th>
-                                <th style="width:15%" class="noSort">Action</th>
+
                             </tr>
                             </thead>
                             <tbody id="table_body">
@@ -52,12 +52,8 @@
                                         <td>{{$value->full_name}}</td>
                                         <td>{{$value->phone}}</td>
                                         <td>{{$value->address}}</td>
-                                        <td>{{$value->status}}</td>
-                                        <td> <a onclick="return confirm('Bạn có chắc muốn xóa không?')" href="{{route('delete_user',['id'=>$value->id])}}"
-                                                class="">
-                                                <i class="fa fa-trash"> Xóa </i>
-                                            </a>
-                                        </td>
+                                        <td style="color: #00A000">@if($value->status==1)Active @else NoActive @endif </td>
+
                                     </tr>
                                 @endforeach
                             @else

@@ -114,7 +114,7 @@
         // Cấu hình các nhãn phân trang
         $('#example1').dataTable( {
             "aoColumnDefs": [
-                { "bSortable": false, "aTargets": [ 1, 2, 3,4 ] },
+                { "bSortable": false, "aTargets": [ 1, 2, 3] },
             ],
             "language": {
                 "sProcessing":   "Đang xử lý...",

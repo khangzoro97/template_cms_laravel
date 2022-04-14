@@ -66,6 +66,7 @@ class HomeController extends Controller
 
 
         $result_login=[];
+        $result_learn=[];
         $full_name='';
         if($users !==null){
             $u_no = $users->user_no;
@@ -75,7 +76,7 @@ class HomeController extends Controller
             $full_name = $users->name;
 
             curl_setopt_array($curl, array(
-                CURLOPT_URL => 'http://dev-globalstd.doyose.com/appif/MIF-MPS-RC-0006',
+                CURLOPT_URL => 'http://globalstd.doyose.com/appif/MIF-MPS-RC-0006',
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => '',
                 CURLOPT_MAXREDIRS => 10,
@@ -96,6 +97,7 @@ class HomeController extends Controller
             $result = json_decode($response);
             $data = $result->resultData;
             $log_his = $data->loginHis;
+            $learn_his = $data->learningHis;
             if(count($log_his)==0){
                 $result_login[0]['loginDt']='';
                 $result_login[0]['loginCnt']=0;
@@ -106,12 +108,37 @@ class HomeController extends Controller
 
             }
 
+            if(count($learn_his)==0){
+                $result_learn[0]['cosSno']='';
+                $result_learn[0]['lsNm']='';
+                $result_learn[0]['lsSno']='';
+                $result_learn[0]['untSno']='';
+                $result_learn[0]['untNm']='';
+                $result_learn[0]['srsSno']='';
+                $result_learn[0]['lnCnt']=0;
+                $result_learn[0]['lnDt']='';
+                $result_learn[0]['srsNm']='';
+                $result_learn[0]['cosNm']='';
+            }
+            foreach ($learn_his as $key=>$value){
+                $result_learn[$key]['cosSno'] = $value->cosSno;
+                $result_learn[$key]['lsNm'] = $value->lsNm;
+                $result_learn[$key]['lsSno'] = $value->lsSno;
+                $result_learn[$key]['untSno'] = $value->untSno;
+                $result_learn[$key]['untNm'] = $value->untNm;
+                $result_learn[$key]['srsSno'] = $value->srsSno;
+                $result_learn[$key]['lnCnt'] = $value->lnCnt;
+                $result_learn[$key]['lnDt'] = $value->lnDt;
+                $result_learn[$key]['srsNm'] = $value->srsNm;
+                $result_learn[$key]['cosNm'] = $value->cosNm;
+
+            }
+
 
         }
 
-        $data1=array('result_login'=>$result_login, 'full_name' =>$full_name,'list_sdt'=>$list_sdt,'phone'=>$sdt,'title'=>"Tra cứu lịch sử khách hàng");
+        $data1=array('result_login'=>$result_login, 'full_name' =>$full_name,'list_sdt'=>$list_sdt,'phone'=>$sdt,'title'=>"Tra cứu lịch sử khách hàng",'learn_his'=>$result_learn);
 
-        $title = "Tra cứu lịch sử khách hàng";
         return view('pages.home')->with($data1);
     }
 

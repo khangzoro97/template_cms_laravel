@@ -26,12 +26,13 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-                <table style="width: 70%" id="examp" class="table table-bordered table-striped">
+                <h5 style="color: #0c84ff">1,Lịch sử đăng nhập</h5>
+                <table style="width: 70%" id="example" class="table table-bordered table-striped">
                     <thead style="width: 70%">
                     <tr>
                         <th style="width:3%">STT</th>
-                        <th style="width:10%;">CUSTOMER</th>
-                        <th style="width:10%;">FULL NAME</th>
+                        <th style="width:10%;">PHONE</th>
+                        <th style="width:10%;">NAME</th>
                         <th style="width:10%">LOGIN DATE</th>
                         <th style="width:10%">LOGIN COUNT</th>
                     </tr>
@@ -43,7 +44,7 @@
                                 <td>{{$key+1}}</td>
                                 <td>{{$phone}}</td>
                                 <td>{{$full_name}}</td>
-                                <td>{{$value['loginDt']}}</td>
+                                <td>@if($value['loginDt']!=null){{date('Y-m-d', strtotime($value['loginDt']))}}@endif</td>
                                 <td>{{$value['loginCnt']}}</td>
                             </tr>
                         @endforeach
@@ -52,6 +53,55 @@
 
                     </tbody>
                 </table>
+                <br>
+                <p style="text-align: center">--------------------------------------------------------------------------------------------------------------------------------</p>
+            </div>
+                <div class="card-body">
+                <h5 style="color: #0c84ff">2,Lịch sử học tập</h5>
+                <table style="width: 100%" id="example1" class="table table-bordered table-striped">
+                    <thead style="width: 100%">
+                    <tr>
+                        <th style="width:3%">STT</th>
+                        <th style="width:10%;">Phone</th>
+                        <th style="width:10%;">Name</th>
+                        <th style="width:10%">Learn count</th>
+                        <th style="width:10%">Learn_Date</th>
+                        <th style="width:10%">Course number</th>
+                        <th style="width:10%">Course name</th>
+                        <th style="width:10%">Lesson number</th>
+                        <th style="width:10%">Lesson name</th>
+                        <th style="width:10%">Unit number</th>
+                        <th style="width:10%">Unit name</th>
+
+                        <th style="width:10%">Series number</th>
+                        <th style="width:10%;">Series name </th>
+                    </tr>
+                    </thead>
+                    <tbody id="table_body">
+
+                    @foreach($learn_his as $key => $value)
+                        <tr>
+                            <td>{{$key+1}}</td>
+                            <td>{{$phone}}</td>
+                            <td>{{$full_name}}</td>
+                            <td>{{$value['lnCnt']}}</td>
+                            <td>@if($value['lnDt']!=null){{date('Y-m-d H:m:s', strtotime($value['lnDt']))}}@endif</td>
+                            <td>{{$value['cosSno']}}</td>
+                            <td>{{$value['cosNm']}}</td>
+                            <td>{{$value['lsSno']}}</td>
+                            <td>{{$value['lsNm']}}</td>
+                            <td>{{$value['untSno']}}</td>
+                            <td>{{$value['untNm']}}</td>
+                            <td>{{$value['srsSno']}}</td>
+                            <td>{{$value['srsNm']}}</td>
+                        </tr>
+                    @endforeach
+
+
+
+                    </tbody>
+                </table>
+
             </div>
             <!-- /.card-body -->
         </div>
